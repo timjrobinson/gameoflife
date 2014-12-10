@@ -1,17 +1,19 @@
-function getEmptyGrid(width, height) {
-  var grid = [];
-  for (var x = 0; x < width; x++) {
-    grid[x] = [];
-    for (var y = 0; y < height; y++) {
-      grid[x][y] = false;
-    }
-  }
-  return grid;
-}
-
+/* globals Grid */
+/*
+ * Main
+ *
+ * Add code to make the game of life work inside the main function.
+ * cells is a 2D array of every square you see on the board.
+ * Each cell has a value of true or false, which represents whether the cell is alive or not.
+ *
+ * Your job is to calculate what the cells should be alive or dead after 1 turn.
+ * Put the result into newCells and return it at the end of the function.
+ * newCells is currently a 2D array of width * height where every value is false.
+ *
+ *
+ */
 function main(width, height, cells) {
-  var x, y;
-  var newCells = getEmptyGrid(width, height);
+  var newCells = Grid.createGrid(width, height);
 
 
 
