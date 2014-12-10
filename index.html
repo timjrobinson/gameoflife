@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js"></script>
+  <script src="./renderer.js"></script>
+  <script src="./grids.js"></script>
+</head>
+<body>
+<div id="main-container">
+  <canvas id="grid" oncontextmenu="javascript:return false;"></canvas>
+</div>
+<div id="settings">
+  Width: <input id="width" type="range" min="1" max="300"><span id="width-value"></span>
+  Height: <input id="height" type="range" min="1" max="300"><span id="height-value"></span>
+  Delay (milliseconds): <input id="delay" type="range" min="0" max="350"><span id="delay-value"></span>
+  <input id="random" type="button" onclick="this.blur();Grid.createRandom(4)" value="Random Grid">
+  Presets: <select id="presets">
+  </select>
+  <input id="applypreset" type="button" onclick='Grid.applyPreset(document.getElementById("presets").value);this.blur()' value="Apply Preset">
+  Press space to step forward &ndash; press Enter to play/pause sequence (generation <span id="gen-num">0</span>)
+</div>
+</body>
+</html>
