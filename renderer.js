@@ -1,3 +1,4 @@
+/* globals main */
 // Based on Wikipedia's description of the algorithm
 // http://en.wikipedia.org/wiki/Conway's_Game_of_Life#Rules
 
@@ -147,9 +148,12 @@ Grid.nextGeneration = function() {
   this.clearPixels();
   this.context.beginPath();
   this.genStep = main(this.width, this.height, this.cloneDeep(this.pixels));
+  if (!this.genStep) {
+    return alert("Please return newCells from the main function.");
+  }
   for (x = 0; x < this.width; ++x) {
     for (y = 0; y < this.height; ++y) {
-      if (this.genStep[x][y]) {
+      if (this.genStep[x] && this.genStep[x][y]) {
         this.putPixel(x - this.initialX, y - this.initialY);
         this.pixels[x][y] = true;
       } else {
